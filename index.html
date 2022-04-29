@@ -1,16 +1,46 @@
+<!DOCTYPE html>
 <html>
     <head>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
+        <title>Simple Interest Calculator</title>
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <h1>Simple Interest Calculator</h1>
-
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
-
-        <button onclick="compute()">Compute</button>
+        <div class="maindiv">
+            <!--User input a number for amount of money they are calculating interest on-->
+            Principal Amount <input type="number" id="principal" min="0">  <br/>
+            <!--User use sliding bar to change interest rate-->
+            Rate <input type="range"  id="rate" onchange="updateRate()" min="1" max="20" step="0.25" value="10.25"> 
+            <!--Default rate-->
+            <span id="rate_val">
+                10.25%
+            </span>
+            <br/>
+            <!--User input a number of years using drop down menu-->
+            No. of Years
+            <select id="years">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <br/>
+            <!--Using Javascript function, calculate interest rate-->
+            Interest : <span id="result"></span>
+            <br>
+            <button onclick="compute()">Compute Interest</button>
+        </div>
+        <footer>
+            &#169; This Calculator belongs to Anita.
+        </footer>
     </body>
 </html>
+
+
