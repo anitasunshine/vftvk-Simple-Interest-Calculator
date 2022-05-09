@@ -3,8 +3,8 @@ function compute()
 {
     //Principal amount is a float
     var principal = parseFloat(document.getElementById("principal").value);
-    //Validate the principal input to ensure it is a positive number larger than 0
-    if (principal <= 0) {
+    //Validate the principal input to ensure it is a positive number larger than 0 and a number at all
+    if (principal <= 0 || document.getElementById("principal").value.length === 0) {
         //Pop up prompt if input invalid
         alert("Enter a positive number please.");
         //if input was invalid, put focus in the principal amount field for user to input again
